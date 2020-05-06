@@ -5,12 +5,12 @@ Curso Sistema Gerenciador de Banco de Dados e SQL
 - https://medium.com/@renato.groffe/postgresql-pgadmin-4-docker-compose-montando-rapidamente-um-ambiente-para-uso-55a2ab230b89
 
 ## Objetivos do Curso
-- Ao final do curso o aluno será capaz de:
--- identificar os bancos de dados estruturados, semi-estruturados, quase estruturados e não estruturados;
--- Realizar consultas em banco de dados estruturados por meio da linguagem SQL;
--- Realizar manipulação de dados nas tabelas de Banco de Dados como, inclusão de registros, alteração de registra e exclusão de registro;
--- Criar, alterar e excluir tabelas de Banco de Dados;
--- Conceitos de Integridade Referencial, Chaves Primárias, Chaves Estrangeiras, etc...
+### Ao final do curso o aluno será capaz de:
+- identificar os bancos de dados estruturados, semi-estruturados, quase estruturados e não estruturados;
+- Realizar consultas em banco de dados estruturados por meio da linguagem SQL;
+- Realizar manipulação de dados nas tabelas de Banco de Dados como, inclusão de registros, alteração de registra e exclusão de registro;
+- Criar, alterar e excluir tabelas de Banco de Dados;
+- Conceitos de Integridade Referencial, Chaves Primárias, Chaves Estrangeiras, etc...
 
 ## 
 
