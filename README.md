@@ -15,9 +15,24 @@ Curso Sistema Gerenciador de Banco de Dados e SQL
 ## 
 
 ## Seções do Curso
-- Criar SGBD PostgresSQL + PGAdmin 4
+- Preparando o ambiente para os estudos deste curso.
+Vamos utilizar o SGBD PostgresSQL + PGAdmin 4
 
-## DQL, DML e DDL
+## Como os dados estão organizados e como os classificamos?
+Dados estruturados:
+Dados semi-estruturados:
+Dados quase estruturados:
+Dados não estruturados:
+
+### Qual será o objeto de estudo neste curso?
+Dados estruturados!
+
+## Minhas primeiras consultas!
+-
+
+## Como podemos classificar os comandos da linguagem SQL?
+
+### DQL, DML e DDL
 A linguagem SQL é única, porém podemos dividi-la conforme a funcionalidade dos comandos.
 DQL - Data Query Language (Linguagem de Consulta de Dados, em português), DML - Data Manipulation Language (Linguagem de Manipulação de Dados, em português) e Data Definition Language (Linguagem de Definição de Dados, em português) são tipos de linguagem SQL.
 - DQL: Tipo de linguagem para realizar consultas nos dados que estão nas tabelas.
