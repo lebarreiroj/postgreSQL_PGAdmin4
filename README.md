@@ -12,7 +12,13 @@ Curso Sistema Gerenciador de Banco de Dados e SQL
 - Criar, alterar e excluir tabelas de Banco de Dados;
 - Conceitos de Integridade Referencial, Chaves Primárias, Chaves Estrangeiras, etc...
 
-## 
+## Profissões relacionadas
+- Governança de dados: Políticas e boas práticas de dados a serem aplicadas na organização.
+- Gerente de Dados (Data manager): é o encarregado da aplicação das polítitas de governança de dados desde o ponto de vista funcional e organizacional. É responsável por decidir se um usuário pode ou não acessar uma base de dados, e se afirmativo quais permissões o usuário terá. 
+- Ingeniero de datos (Data engineer): é o encarregado de aplicar as políticas desde o ponto de vista técnico. É o responsável por conceer os acessoa aos usuários, conforma a autorização obtida do Administrador de Dados.
+- Data steward (Administrador de Dados): se encarrega da formação e execução de políticas para a gestão dos dados que tem sob seu domínio, assegurando-se que em seus dasos se aplicam as mesmas políticas que definidas pelo Data manager.
+- propietario de datos (Data owner): são responsáveis pelo uso dos dasod que estão sob o seu controle. Encarregam-se de devinir as regras de armazenamento dos dados nos bancos de dados, os padrões de qualidade e a utilidade de desses dados.
+- Cientista de dados (Data scientist): Encarregados da criação de valor através da explotação de dados. Esses se encarregam de analisar os dados armazenados para encontrar padrões e oportunidades de aplicação ao negócio.
 
 ## Seções do Curso
 - Preparando o ambiente para os estudos deste curso.
