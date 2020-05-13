@@ -28,10 +28,10 @@ Curso Sistema Gerenciador de Banco de Dados e SQL
 Vamos utilizar o SGBD PostgresSQL + PGAdmin 4
 
 ## Como os dados estão organizados e como os classificamos?
-Dados estruturados:
-Dados semi-estruturados:
-Dados quase estruturados:
-Dados não estruturados:
+- Dados estruturados:
+- Dados semi-estruturados:
+- Dados quase estruturados:
+- Dados não estruturados:
 
 ### Qual será o objeto de estudo neste curso?
 Dados estruturados!
