@@ -4,6 +4,15 @@ Curso Sistema Gerenciador de Banco de Dados e SQL
 ## Criação do Ambiente de Banco de Dados
 - https://medium.com/@renato.groffe/postgresql-pgadmin-4-docker-compose-montando-rapidamente-um-ambiente-para-uso-55a2ab230b89
 
+### PostgreSQL e PGAdmin 4 em containers Docker
+
+#### O QUE É ESTE TUTORIAL?
+Neste documento você terá o passo a passo para montar e configurar o nosso banco de dados PostgreSQL e pgAdmin 4 em containers Docker.
+
+A função deste material é deixar um ambiente com banco de dados, PostgreSQL e pgAdmin 4 pronto para ser utilizado por qualquer pessoa que deseja preparar o seu ambiente de Banco de Dados para seus projetos.
+
+Esse material não tem a função de explicar o que é e como funciona o Docker, somente o necessário para o funcionamento deste ambiente.
+
 ## Subindo imagens docker para o dockerhub (um exemplo)
 - https://jtemporal.com/subindo-imagens-docker-pro-dockerhub/
 
