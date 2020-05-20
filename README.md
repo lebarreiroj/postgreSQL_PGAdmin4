@@ -13,6 +13,73 @@ A função deste material é deixar um ambiente com banco de dados, PostgreSQL e
 
 Esse material não tem a função de explicar o que é e como funciona o Docker, somente o necessário para o funcionamento deste ambiente.
 
+#### HÁ ALGUM PRÉ-REQUISITO PARA ESTE TUTORIAL FUNCIONAR?
+Sim, pois você já deve o Docker instalado em sua máquina.
+Caso você ainda não tenha, veja como instalar no tutorial “Como instalar o docker na minha máquina!” <criar tutorial e inserir o link> 
+
+#### VAMOS AO PASSO A PASSO!
+A montagem desse ambiente é rápida e simples!
+Serão criados 2 (dois) containers, um com o banco de dados PostgreSQL e outro com pgAdmin 4, e uma network para a comunicação entre os containers.
+Esse ambiente será criado utilizando-se o Docker Compose, um serviço do Docker para a criação e execução conjunta dos múltiplos containers de uma solução. Para isso vamos utilizar um arquivo chamado docker-compose.yml com os 3 (três) comandos para a criação e configuração dos containers e a network. 
+
+##### PASSO 1 – Baixar o arquivo docker-compose.yml
+Baixe o arquivo docker-compose.yml para a sua máquina. Mova o arquivo baixado para o seu diretório de trabalho.
+Apenas como sugestão, crie seu diretório de trabalho com o nome curso_bd_sql.
+
+Uma breve explicação do que tem no arquivo docker-compose.yml:
+```
+version: '3'
+
+services:
+  srv-bd-postgresql:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "curso"
+    ports:
+      - "15432:5432"
+    volumes:
+      - /home/luisjesus/Dev/Docker-Compose/PostgreSQL:/var/lib/postgresql/data
+    networks:
+      - srv-postgres-network
+      
+  srv-pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "luisjesus.ti@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "curso"
+    ports:
+      - "16543:80"
+    depends_on:
+      - srv-bd-postgresql
+    networks:
+      - srv-postgres-network
+
+networks: 
+  srv-postgres-network:
+    driver: bridge
+```
+
+Esse arquivo docker-compose.yml cria:
+
+Esse arquivo docker-compose.yml cria:
+a)	Serviços (Containeres):
+•	srv-bd-postgresql: com o banco de dados PostgreSQL com porta de acesso 15432; e
+•	srv-pgadmin: com o PGAdmin 4 com porta de acesso 16543; 
+b)	Rede (Network):
+•	srv-postgres-network: serviço para comunicação dos containers srv-bd-postgresql e srv-pgadmin
+
+
+##### PASSO 2 – Colocando para funcionar
+
+Agora chegou a hora de colocar para funcionar!
+Nós vamos trabalhar nesta etapa com o aplicativo Windows PowerShell. Para isso vamos abrir o aplicativo Windows PowerShell.
+
+![image](https://user-images.githubusercontent.com/29760189/82391336-6fde8200-9a17-11ea-9e11-3ff03af5bf48.png)
+
+Veja como é o Windows PowerShell na figura abaixo.
+
+
+
 ## Subindo imagens docker para o dockerhub (um exemplo)
 - https://jtemporal.com/subindo-imagens-docker-pro-dockerhub/
 
