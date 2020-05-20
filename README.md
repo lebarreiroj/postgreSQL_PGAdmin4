@@ -90,6 +90,12 @@ Também pode ser digitado todo o caminho:
 ```
 cd C:\Users\lebar\Documents\curso-sgbd-sql
 ```
+![image](https://user-images.githubusercontent.com/29760189/82394875-84734800-9a20-11ea-893f-cbad28b6fddc.png)
+
+Para verificar se o arquivo está no diretório, digite o comando ``` ls ``` (letras L e S) e o nome do arquivo que está procurando. 
+O comando ls lista o conteúdo do diretório (arquivos e diretórios). O comando seguido de um nome ``` ls docker-compose.yml```, vai listar somente o arquivo procurado (o docker-compose.yml) se existir no diretório. 
+
+A figura abaixo mostra o comando e o resultado da busca, o nome do arquivo na lista. 
 
 
 
