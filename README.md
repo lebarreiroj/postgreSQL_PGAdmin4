@@ -82,7 +82,14 @@ Veja como é o Windows PowerShell na figura abaixo.
 
 Vamos ao diretório onde está o arquivo docker-compose.yml. 
 No meu caso é o diretório C:\Users\lebar\Documents\curso-sgbd-sql.
-Para mudar de diretório eu usei o comando ``` cd .\Documents\curso-sgbd-sql```. Também pode ser digitado todo o caminho: ```cd C:\Users\lebar\Documents\curso-sgbd-sql```
+Para mudar de diretório eu usei o comando:
+``` 
+cd .\Documents\curso-sgbd-sql
+```
+Também pode ser digitado todo o caminho: 
+```
+cd C:\Users\lebar\Documents\curso-sgbd-sql
+```
 
 
 
