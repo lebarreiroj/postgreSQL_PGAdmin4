@@ -78,6 +78,12 @@ Nós vamos trabalhar nesta etapa com o aplicativo Windows PowerShell. Para isso 
 
 Veja como é o Windows PowerShell na figura abaixo.
 
+![image](https://user-images.githubusercontent.com/29760189/82391829-b385bb80-9a18-11ea-9507-6565e5b424bc.png)
+
+Vamos ao diretório onde está o arquivo docker-compose.yml. 
+No meu caso é o diretório C:\Users\lebar\Documents\curso-sgbd-sql.
+Para mudar de diretório eu usei o comando cd .\Documents\curso-sgbd-sql. Também pode ser digitado todo o caminho: cd C:\Users\lebar\Documents\curso-sgbd-sql
+
 
 
 ## Subindo imagens docker para o dockerhub (um exemplo)
