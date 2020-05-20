@@ -97,6 +97,10 @@ O comando ls lista o conteúdo do diretório (arquivos e diretórios). O comando
 
 A figura abaixo mostra o comando e o resultado da busca, o nome do arquivo na lista. 
 
+![image](https://user-images.githubusercontent.com/29760189/82394974-d1efb500-9a20-11ea-9019-dc73ee58433a.png)
+
+Vamos executar o comando docker-compose up -d que vai criar os containers. Caso as imagens do PostgreSQL e do PGAdmin ainda não exista na máquina, esse comando vai realizar o download (é o que ocorreu neste caso).
+
 
 
 ## Subindo imagens docker para o dockerhub (um exemplo)
