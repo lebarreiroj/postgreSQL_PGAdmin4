@@ -101,6 +101,57 @@ A figura abaixo mostra o comando e o resultado da busca, o nome do arquivo na li
 
 Vamos executar o comando docker-compose up -d que vai criar os containers. Caso as imagens do PostgreSQL e do PGAdmin ainda não exista na máquina, esse comando vai realizar o download (é o que ocorreu neste caso).
 
+![image](https://user-images.githubusercontent.com/29760189/82395024-f64b9180-9a20-11ea-9447-6cdb77b34eb2.png)
+
+##### PASSO 3 – Verificando se funcionou
+
+Ao final, vamos executar alguns comandos Docker para verificar o que foi criado pelo docker-compose.  
+Primeiro vamos verificar a criação da rede (network) srv-postgres-network com o comando docker network ls. Veja que tem o curso-sgbd-sql_postgres-network, que é a concatenação do nome do diretório, curso-sgbd-sql, com o nome da network, srv-postgres-network. 
+
+--> IMAGEM
+
+Agora vamos verificar a criação do banco de dados PostgreSQL e do PGAdmin com o comando docker-compose ps. Podemos ver o banco de dados PostgreSQL na porta 15432 e o PGAdmin 4 na porta 16543.
+
+--> IMAGEM
+
+##### PASSO 4 – Testando e configurando o ambiente para usar o banco de dados
+
+Em um browser (neste exemplo eu uso o Google Chrome), acessem o endereço: http://localhost:16543. Aparecerá a tela abaixo:
+
+--> IMAGEM
+
+Essa é a tela de acesso ao PGAdmin 4. 
+Vamos fornecer as credenciais definidas no nosso arquivos docker-compose.yml, quais sejam:
+Usuário: luisjesus.ti@gmail.com
+Senha: curso
+Pronto! Já estamos no painel de gerenciamento PGAdmin 4 (veja a tela abaixo)
+
+--> IMAGEM
+
+O próximo passo é criar a conexão com a instância de banco de dados PostgreSQL.
+
+Para isso vamos:
+- Adicionar um novo Servidor (Add New Server). Aparecerá a janela abaixo. 
+
+--> IMAGEM
+
+Para criar a conexão para acesso à instância do PostgreSQL, vamos informar:
+Host name/address: srv-bd-postgresql
+- Esse é o nome do serviço PostgreSQL que definimos no nosso docker-compose.yml.
+Port: 5432
+- Essa é a porta padrão de acesso ao container. Porta disponível na rede srv-postgres-network, e definido no nosso docker-compose.yml.
+Username: postgres
+- Valor padrão definido no nosso docker-compose.yml.
+Password: curso
+- Valor padrão definido no nosso docker-compose.yml.
+
+Feito isso, já podemos ver, na figura abaixo, que o PGAdmin 4 acessa o banco de dados PostgreSQL.
+
+--> IMAGEM
+
+## Referências
+PostgreSQL - Docker Hub
+pgAdmin 4 - Docker Hub
 
 
 ## Subindo imagens docker para o dockerhub (um exemplo)
