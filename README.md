@@ -88,7 +88,7 @@ Vamos executar o comando ```docker-compose up -d``` que vai criar os containers.
 ![Captura de tela de 2020-06-04 19-13-58](https://user-images.githubusercontent.com/29760189/83815903-9519f400-a697-11ea-88b3-24a6d9341a7d.png)
 
 Observem os passos executados a partir das mensagens mostradas logo após o comando:
-*Passo 1* 
+*Passo 1*
 Creating network "cursosgbdsql_srv-postgres-network" with driver "bridge" -> Criando a network;
 *Passo 2*
 Creating cursosgbdsql_srv-bd-postgresql_1 ... 
@@ -111,11 +111,19 @@ NETWORK ID          NAME                                DRIVER              SCOP
 de351f344ec2        cursosgbdsql_srv-postgres-network   bridge              local
 ```
 
-Agora vamos verificar a criação do banco de dados PostgreSQL e do PGAdmin com o comando docker-compose ps. Podemos ver o banco de dados PostgreSQL na porta 15432 e o PGAdmin 4 na porta 16543.
+Neste passo nos vamos verificar a criação do banco de dados PostgreSQL e do PGAdmin com o comando ```docker-compose ps```. 
 
-![image](https://user-images.githubusercontent.com/29760189/82395324-af11d080-9a21-11ea-9d55-faeb1b78cc35.png)
+![Captura de tela de 2020-06-04 19-34-38](https://user-images.githubusercontent.com/29760189/83817181-7a954a00-a69a-11ea-93a3-93e7c5b6a008.png)
 
-##### PASSO 4 – Testando e configurando o ambiente para usar o banco de dados
+Podemos ver o banco de dados PostgreSQL na porta 15432 e o PGAdmin 4 na porta 16543.
+```
+              Name                            Command               State     Ports
+-----------------------------------------------------------------------------------
+cursosgbdsql_srv-bd-postgresql_1   docker-entrypoint.sh postgres   Exit 126        
+cursosgbdsql_srv-pgadmin_1         /entrypoint.sh                  Exit 2          
+```
+
+##### PASSO 4 – Testando e configurando o ambiente para ser utilizado
 
 Em um browser (neste exemplo eu uso o Google Chrome), acessem o endereço: http://localhost:16543. Aparecerá a tela abaixo:
 
