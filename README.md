@@ -15,9 +15,11 @@ Esse material não tem a função de explicar o que é e como funciona o Docker,
 #### HÁ ALGUM PRÉ-REQUISITO PARA ESTE TUTORIAL FUNCIONAR?
 Sim, pois você já deve o Docker instalado em sua máquina.
 Caso você ainda não tenha, veja como instalar na documentação do docker. 
-Para Mac: https://docs.docker.com/docker-for-mac/install/
-Para Windows: https://docs.docker.com/docker-for-windows/install/
-Para Linux: https://docs.docker.com/engine/install/
+- Para Mac: https://docs.docker.com/docker-for-mac/install/
+- Para Windows: https://docs.docker.com/docker-for-windows/install/
+- Para Linux: https://docs.docker.com/engine/install/
+
+Neste tutorial, o ambiente será montado em uma máquina com o Linux Ubuntu 18.04.
 
 #### VAMOS AO PASSO A PASSO!
 Agora que vocês já estão com Docker instalado, vamos montar esse ambiente de maveira bem rápida e simples!
@@ -42,7 +44,7 @@ services:
     ports:
       - "15432:5432"
     volumes:
-      - /home/luisjesus/Dev/Docker-Compose/PostgreSQL:/var/lib/postgresql/data
+      - ../postgresql/data:/var/lib/postgresql/data
     networks:
       - srv-postgres-network
       
@@ -76,43 +78,38 @@ b)	Rede (Network):
 ##### PASSO 2 – Colocando para funcionar
 
 Agora chegou a hora de colocar para funcionar!
-Nós vamos trabalhar nesta etapa com o aplicativo Windows PowerShell. Para isso vamos abrir o aplicativo Windows PowerShell.
 
-![image](https://user-images.githubusercontent.com/29760189/82391336-6fde8200-9a17-11ea-9e11-3ff03af5bf48.png)
+Nós vamos trabalhar nesta etapa com o aplicativo Terminal.
 
-Veja como é o Windows PowerShell na figura abaixo.
+Vamos ao diretório onde está o arquivo docker-compose.yml. No meu caso é o diretório ```/home/luis/desenv/curso-sgbd-sql ```. Ver na imagem abaixo, onde eu listo o conteúdo do diretório com o comando ``` ls ``` (letras L e S).  
+![Captura de tela de 2020-06-04 19-04-32](https://user-images.githubusercontent.com/29760189/83815683-22107d80-a697-11ea-9fde-528b65f9b01a.png)
 
-![image](https://user-images.githubusercontent.com/29760189/82391829-b385bb80-9a18-11ea-9507-6565e5b424bc.png)
+Vamos executar o comando ```docker-compose up -d``` que vai criar os containers. Caso as imagens Docker do PostgreSQL e do PGAdmin ainda não exista na máquina, esse comando vai realizar o download (não é o que ocorre nesse caso, pois as imagens existem). Veja na imagem abaixo:
+![Captura de tela de 2020-06-04 19-13-58](https://user-images.githubusercontent.com/29760189/83815903-9519f400-a697-11ea-88b3-24a6d9341a7d.png)
 
-Vamos ao diretório onde está o arquivo docker-compose.yml. 
-No meu caso é o diretório C:\Users\lebar\Documents\curso-sgbd-sql.
-Para mudar de diretório eu usei o comando:
-``` 
-cd .\Documents\curso-sgbd-sql
-```
-Também pode ser digitado todo o caminho: 
-```
-cd C:\Users\lebar\Documents\curso-sgbd-sql
-```
-![image](https://user-images.githubusercontent.com/29760189/82394875-84734800-9a20-11ea-893f-cbad28b6fddc.png)
-
-Para verificar se o arquivo está no diretório, digite o comando ``` ls ``` (letras L e S) e o nome do arquivo que está procurando. 
-O comando ls lista o conteúdo do diretório (arquivos e diretórios). O comando seguido de um nome ``` ls docker-compose.yml```, vai listar somente o arquivo procurado (o docker-compose.yml) se existir no diretório. 
-
-A figura abaixo mostra o comando e o resultado da busca, o nome do arquivo na lista. 
-
-![image](https://user-images.githubusercontent.com/29760189/82394974-d1efb500-9a20-11ea-9019-dc73ee58433a.png)
-
-Vamos executar o comando docker-compose up -d que vai criar os containers. Caso as imagens do PostgreSQL e do PGAdmin ainda não exista na máquina, esse comando vai realizar o download (é o que ocorreu neste caso).
-
-![image](https://user-images.githubusercontent.com/29760189/82395024-f64b9180-9a20-11ea-9447-6cdb77b34eb2.png)
+Observem os passos executados a partir das mensagens mostradas logo após o comando:
+*Passo 1* 
+Creating network "cursosgbdsql_srv-postgres-network" with driver "bridge" -> Criando a network;
+*Passo 2*
+Creating cursosgbdsql_srv-bd-postgresql_1 ... 
+Creating cursosgbdsql_srv-bd-postgresql_1 ... done
+*Passo 3*
+Creating cursosgbdsql_srv-pgadmin_1 ... 
+Creating cursosgbdsql_srv-pgadmin_1 ... done
 
 ##### PASSO 3 – Verificando se funcionou
 
-Ao final, vamos executar alguns comandos Docker para verificar o que foi criado pelo docker-compose.  
-Primeiro vamos verificar a criação da rede (network) srv-postgres-network com o comando docker network ls. Veja que tem o curso-sgbd-sql_postgres-network, que é a concatenação do nome do diretório, curso-sgbd-sql, com o nome da network, srv-postgres-network. 
+Após o passo 2, agora vamos verificar o resultado da execução, ou seja, o que foi criado pelo docker-compose.  com comandos Docker para verificar o que foi criado pelo docker-compose. Para isso nós vamos utilizar alguns comandos do Docker.
 
-![image](https://user-images.githubusercontent.com/29760189/82395315-aa4d1c80-9a21-11ea-98ea-d73fa2f39e4a.png)
+Primeiro vamos verificar a criação da rede (network) srv-postgres-network com o comando ``` docker network ls ```. 
+
+![Captura de tela de 2020-06-04 19-26-44](https://user-images.githubusercontent.com/29760189/83816803-a49a3c80-a699-11ea-991a-f2aa5c4ff16e.png)
+
+Veja que tem o curso-sgbd-sql_postgres-network, que é a concatenação do nome do diretório, curso-sgbd-sql, com o nome da network, srv-postgres-network. 
+```
+NETWORK ID          NAME                                DRIVER              SCOPE
+de351f344ec2        cursosgbdsql_srv-postgres-network   bridge              local
+```
 
 Agora vamos verificar a criação do banco de dados PostgreSQL e do PGAdmin com o comando docker-compose ps. Podemos ver o banco de dados PostgreSQL na porta 15432 e o PGAdmin 4 na porta 16543.
 
