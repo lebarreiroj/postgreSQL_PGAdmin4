@@ -14,12 +14,17 @@ Esse material não tem a função de explicar o que é e como funciona o Docker,
 
 #### HÁ ALGUM PRÉ-REQUISITO PARA ESTE TUTORIAL FUNCIONAR?
 Sim, pois você já deve o Docker instalado em sua máquina.
-Caso você ainda não tenha, veja como instalar no tutorial “Como instalar o docker na minha máquina!” <criar tutorial e inserir o link> 
+Caso você ainda não tenha, veja como instalar na documentação do docker. 
+Para Mac: https://docs.docker.com/docker-for-mac/install/
+Para Windows: https://docs.docker.com/docker-for-windows/install/
+Para Linux: https://docs.docker.com/engine/install/
 
 #### VAMOS AO PASSO A PASSO!
-A montagem desse ambiente é rápida e simples!
-Serão criados 2 (dois) containers, um com o banco de dados PostgreSQL e outro com pgAdmin 4, e uma network para a comunicação entre os containers.
-Esse ambiente será criado utilizando-se o Docker Compose, um serviço do Docker para a criação e execução conjunta dos múltiplos containers de uma solução. Para isso vamos utilizar um arquivo chamado docker-compose.yml com os 3 (três) comandos para a criação e configuração dos containers e a network. 
+Agora que vocês já estão com Docker instalado, vamos montar esse ambiente de maveira bem rápida e simples!
+
+Com esses passoa aqui, nós vamos criar 2 (dois) containers, um com o banco de dados PostgreSQL e outro com pgAdmin 4, e uma network para a comunicação entre os containers.
+
+Para isso nós vamos utilizar o Docker Compose, um serviço do Docker para a criação e execução conjunta dos múltiplos containers em uma solução. A solução está no arquivo docker-compose.yml que você pode baixar para o diretório onde o ambiente será montado. Esse arquivo contém os 3 (três) comandos para criar e configurar os containers e a network. 
 
 ##### PASSO 1 – Baixar o arquivo docker-compose.yml
 Baixe o arquivo docker-compose.yml para a sua máquina. Mova o arquivo baixado para o seu diretório de trabalho.
