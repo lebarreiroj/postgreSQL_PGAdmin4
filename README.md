@@ -123,7 +123,6 @@ Podemos ver o banco de dados PostgreSQL na porta 15432 e o PGAdmin 4 na porta 16
 ----------------------------------------------------------------------------------------------------------------
 postgresql_pgadmin4_srv-bd-postgresql_1   docker-entrypoint.sh postgres   Up      0.0.0.0:15432->5432/tcp       
 postgresql_pgadmin4_srv-pgadmin_1         /entrypoint.sh                  Up      443/tcp, 0.0.0.0:16543->80/tcp
-     
 ```
 
 ##### PASSO 4 – Testando e configurando o ambiente para ser utilizado
