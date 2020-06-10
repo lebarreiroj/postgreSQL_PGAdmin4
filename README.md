@@ -129,7 +129,8 @@ postgresql_pgadmin4_srv-pgadmin_1         /entrypoint.sh                  Up    
 
 Em um browser (neste exemplo eu uso o Google Chrome), acessem o endereço: http://localhost:16543. Aparecerá a tela abaixo:
 
-![image](https://user-images.githubusercontent.com/29760189/82395337-b3d68480-9a21-11ea-83fa-8d19d4c85ce5.png)
+
+![Captura de tela de 2020-06-10 20-16-59](https://user-images.githubusercontent.com/29760189/84328096-65676200-ab57-11ea-83c8-d706a675d105.png)
 
 Essa é a tela de acesso ao PGAdmin 4. 
 Vamos fornecer as credenciais definidas no nosso arquivos docker-compose.yml, quais sejam:
@@ -137,8 +138,7 @@ Usuário: luisjesus.ti@gmail.com
 Senha: curso
 Pronto! Já estamos no painel de gerenciamento PGAdmin 4 (veja a tela abaixo)
 
-
-![image](https://user-images.githubusercontent.com/29760189/82395350-b933cf00-9a21-11ea-8625-2b407a01552e.png)
+![Captura de tela de 2020-06-10 20-19-10](https://user-images.githubusercontent.com/29760189/84328214-bb3c0a00-ab57-11ea-8fc2-619f302326d9.png)
 
 O próximo passo é criar a conexão com a instância de banco de dados PostgreSQL.
 
