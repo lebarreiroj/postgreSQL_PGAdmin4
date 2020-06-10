@@ -81,11 +81,12 @@ Agora chegou a hora de colocar para funcionar!
 
 Nós vamos trabalhar nesta etapa com o aplicativo Terminal.
 
-Vamos ao diretório onde está o arquivo docker-compose.yml. No meu caso é o diretório ```/home/luis/desenv/curso-sgbd-sql ```. Ver na imagem abaixo, onde eu listo o conteúdo do diretório com o comando ``` ls ``` (letras L e S).  
-![Captura de tela de 2020-06-04 19-04-32](https://user-images.githubusercontent.com/29760189/83815683-22107d80-a697-11ea-9fde-528b65f9b01a.png)
+Vamos ao diretório onde está o arquivo docker-compose.yml. No meu caso é o diretório ```/home/luis/desenv/postgreSQL_PGAdmin4 ```. Ver na imagem abaixo, onde eu listo o conteúdo do diretório com o comando ``` ls ``` (letras L e S).  
+![Captura de tela de 2020-06-10 19-50-38](https://user-images.githubusercontent.com/29760189/84326667-df95e780-ab53-11ea-9d96-d289ba81e834.png)
+
 
 Vamos executar o comando ```docker-compose up -d``` que vai criar os containers. Caso as imagens Docker do PostgreSQL e do PGAdmin ainda não exista na máquina, esse comando vai realizar o download (não é o que ocorre nesse caso, pois as imagens existem). Veja na imagem abaixo:
-![Captura de tela de 2020-06-04 19-13-58](https://user-images.githubusercontent.com/29760189/83815903-9519f400-a697-11ea-88b3-24a6d9341a7d.png)
+![Captura de tela de 2020-06-10 19-54-54](https://user-images.githubusercontent.com/29760189/84326870-4b785000-ab54-11ea-948b-cff0bf21eec9.png)
 
 Observem os passos executados a partir das mensagens mostradas logo após o comando:
 *Passo 1*
@@ -101,26 +102,28 @@ Creating cursosgbdsql_srv-pgadmin_1 ... done
 
 Após o passo 2, agora vamos verificar o resultado da execução, ou seja, o que foi criado pelo docker-compose.  com comandos Docker para verificar o que foi criado pelo docker-compose. Para isso nós vamos utilizar alguns comandos do Docker.
 
-Primeiro vamos verificar a criação da rede (network) srv-postgres-network com o comando ``` docker network ls ```. 
+Primeiro vamos verificar a criação da rede (network) srv-postgres-network com o comando ``` sudo docker network ls ```. 
 
-![Captura de tela de 2020-06-04 19-26-44](https://user-images.githubusercontent.com/29760189/83816803-a49a3c80-a699-11ea-991a-f2aa5c4ff16e.png)
+![Captura de tela de 2020-06-10 20-10-10](https://user-images.githubusercontent.com/29760189/84327696-6946b480-ab56-11ea-833a-f4b084f6e472.png)
 
-Veja que tem o curso-sgbd-sql_postgres-network, que é a concatenação do nome do diretório, curso-sgbd-sql, com o nome da network, srv-postgres-network. 
+Veja que tem o postgresql_pgadmin4_srv-postgres-network, que é a concatenação do nome do diretório, postgresql_pgadmin4, com o nome da network, srv-postgres-network. 
 ```
-NETWORK ID          NAME                                DRIVER              SCOPE
-de351f344ec2        cursosgbdsql_srv-postgres-network   bridge              local
+NETWORK ID          NAME                                       DRIVER              SCOPE
+a02951c8dfaf        postgresql_pgadmin4_srv-postgres-network   bridge              local
+
 ```
 
-Neste passo nos vamos verificar a criação do banco de dados PostgreSQL e do PGAdmin com o comando ```docker-compose ps```. 
+Neste passo nos vamos verificar a criação do banco de dados PostgreSQL e do PGAdmin com o comando ```sudo docker-compose ps```. 
+![Captura de tela de 2020-06-10 19-59-44](https://user-images.githubusercontent.com/29760189/84327122-fbe65400-ab54-11ea-8d09-d64cad6bed0f.png)
 
-![Captura de tela de 2020-06-04 19-34-38](https://user-images.githubusercontent.com/29760189/83817181-7a954a00-a69a-11ea-93a3-93e7c5b6a008.png)
 
 Podemos ver o banco de dados PostgreSQL na porta 15432 e o PGAdmin 4 na porta 16543.
 ```
-              Name                            Command               State     Ports
------------------------------------------------------------------------------------
-cursosgbdsql_srv-bd-postgresql_1   docker-entrypoint.sh postgres   Exit 126        
-cursosgbdsql_srv-pgadmin_1         /entrypoint.sh                  Exit 2          
+                 Name                                Command              State               Ports             
+----------------------------------------------------------------------------------------------------------------
+postgresql_pgadmin4_srv-bd-postgresql_1   docker-entrypoint.sh postgres   Up      0.0.0.0:15432->5432/tcp       
+postgresql_pgadmin4_srv-pgadmin_1         /entrypoint.sh                  Up      443/tcp, 0.0.0.0:16543->80/tcp
+     
 ```
 
 ##### PASSO 4 – Testando e configurando o ambiente para ser utilizado
