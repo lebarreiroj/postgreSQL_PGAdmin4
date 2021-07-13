@@ -63,8 +63,6 @@ networks:
 ```
 
 Esse arquivo docker-compose.yml cria:
-
-Esse arquivo docker-compose.yml cria:
 a)	Serviços (Containeres):
 •	srv-bd-postgresql: com o banco de dados PostgreSQL com porta de acesso 15432; e
 •	srv-pgadmin: com o PGAdmin 4 com porta de acesso 16543; 
