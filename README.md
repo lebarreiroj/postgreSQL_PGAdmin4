@@ -19,7 +19,7 @@ Caso você ainda não tenha, veja como instalar na documentação do docker.
 Neste tutorial, o ambiente será montado em uma máquina com o Linux Ubuntu 18.04.
 
 ### VAMOS AO PASSO A PASSO!
-Agora que vocês já estão com Docker instalado, vamos montar esse ambiente de maveira bem rápida e simples!
+Agora que vocês já estão com Docker instalado, vamos montar esse ambiente de maneira bem rápida e simples!
 
 Com esses passoa aqui, nós vamos criar 2 (dois) containers, um com o banco de dados PostgreSQL e outro com pgAdmin 4, e uma network para a comunicação entre os containers.
 
