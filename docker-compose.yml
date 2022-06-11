@@ -8,7 +8,7 @@ services:
     ports:
       - "15432:5432"
     volumes:
-      - /home/luisjesus/Dev/Docker-Compose/PostgreSQL:/var/lib/postgresql/data
+      - ./mnt:/var/lib/postgresql/data
     networks:
       - srv-postgres-network
       
