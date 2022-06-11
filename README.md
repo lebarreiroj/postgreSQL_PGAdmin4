@@ -21,7 +21,7 @@ Neste tutorial, o ambiente será montado em uma máquina com o Linux Ubuntu 18.0
 ### VAMOS AO PASSO A PASSO!
 Agora que vocês já estão com Docker instalado, vamos montar esse ambiente de maneira bem rápida e simples!
 
-Com esses passoa aqui, nós vamos criar 2 (dois) containers, um com o banco de dados PostgreSQL e outro com pgAdmin 4, e uma network para a comunicação entre os containers.
+Com esses passos, nós vamos criar 2 (dois) containers, um com o banco de dados PostgreSQL e outro com pgAdmin 4, e uma network para a comunicação entre os containers.
 
 Para isso nós vamos utilizar o Docker Compose, um serviço do Docker para a criação e execução conjunta dos múltiplos containers em uma solução. A solução está no arquivo docker-compose.yml que você pode baixar para o diretório onde o ambiente será montado. Esse arquivo contém os 3 (três) comandos para criar e configurar os containers e a network. 
 
@@ -64,9 +64,13 @@ networks:
 
 Esse arquivo docker-compose.yml cria:
 a)	Serviços (Containeres):
+
 •	srv-bd-postgresql: com o banco de dados PostgreSQL com porta de acesso 15432; e
+
 •	srv-pgadmin: com o PGAdmin 4 com porta de acesso 16543; 
+
 b)	Rede (Network):
+
 •	srv-postgres-network: serviço para comunicação dos containers srv-bd-postgresql e srv-pgadmin
 
 
@@ -83,13 +87,21 @@ Vamos executar o comando ```docker-compose up -d``` que vai criar os containers.
 ![Captura de tela de 2020-06-10 19-54-54](https://user-images.githubusercontent.com/29760189/84326870-4b785000-ab54-11ea-948b-cff0bf21eec9.png)
 
 Observem os passos executados a partir das mensagens mostradas logo após o comando:
+
 *Passo 1*
+
 Creating network "cursosgbdsql_srv-postgres-network" with driver "bridge" -> Criando a network;
+
 *Passo 2*
+
 Creating cursosgbdsql_srv-bd-postgresql_1 ... 
+
 Creating cursosgbdsql_srv-bd-postgresql_1 ... done
+
 *Passo 3*
+
 Creating cursosgbdsql_srv-pgadmin_1 ... 
+
 Creating cursosgbdsql_srv-pgadmin_1 ... done
 
 #### PASSO 3 – Verificando se funcionou
