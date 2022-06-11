@@ -41,7 +41,7 @@ services:
     ports:
       - "15432:5432"
     volumes:
-      - ../postgresql/data:/var/lib/postgresql/data
+      - ./mnt:/var/lib/postgresql/data
     networks:
       - srv-postgres-network
       
@@ -73,6 +73,8 @@ b)	Rede (Network):
 
 •	srv-postgres-network: serviço para comunicação dos containers srv-bd-postgresql e srv-pgadmin
 
+
+Crie um diretório chamado *mnt* onde vai ficar a base de dados gerenciada pelo SGBD. Dessa forma, você poderá fazer um backup do diretório. Esse diretório é o que está no volume no arquivo docker-compose.yml. 
 
 #### PASSO 2 – Colocando para funcionar
 
