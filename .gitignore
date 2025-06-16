@@ -1,0 +1,5 @@
+# Arquivos do macOS
+.DS_Store
+
+# Diretório mnt (caso não queira versionar)
+mnt/

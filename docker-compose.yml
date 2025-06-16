@@ -2,7 +2,7 @@ version: '3'
 
 services:
   srv-bd-postgresql:
-    image: postgres
+    image: postgres:15
     environment:
       POSTGRES_PASSWORD: "curso"
     ports:
